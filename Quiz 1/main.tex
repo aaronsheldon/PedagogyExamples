@@ -1,0 +1,101 @@
+\documentclass{exam}
+\usepackage{longtable}
+
+% Bibliographic elements
+\title{DATA3304 Quiz 1}
+\date{\today}
+\author{Bow Valley College\\Data Management and Analytics}
+
+% Header
+\pagestyle{headandfoot}
+\firstpageheader{DATA3304}{Quiz 1}{February 16, 2024}
+\firstpageheadrule
+\runningheader{DATA3304}{Quiz 1}{February 16, 2024}
+\runningheadrule
+
+\begin{document}
+Name:\enspace\hrulefill
+\begin{questions}
+
+    \question For each of the two scenarios identify whether the rows of the example data
+    are a statistically independent sample, or if the rows are dependent on each other.
+    Please provide a one or two sentence explanation.
+    \begin{parts}
+        \part A commercial vehicle servicing company runs a large maintenance shop with a
+        complex multistage workflow. A mechanic can only service one vehicle at a time. The
+        vehicles are not moved, so only one service bay can hold a vehicle at a time. The
+        quality control on the maintenance requires that only one mechanic can service a
+        vehicle at a time. You have been given a dataset to determine bottlenecks in service
+        process.
+        \begin{longtable}{llllll}
+            Vehicle & Bay & Mechanic & Start & Stop & $\cdots$\\
+            \hline
+            \endhead
+            10 & 3 & A & 8 & 12 & $\cdots$\\
+            10 & 3 & B & 13 & 17 & $\cdots$\\
+            20 & 7 & C & 9 & 11 & $\cdots$\\
+            20 & 7 & A & 13 & 15 & $\cdots$\\
+            \vdots & \vdots & \vdots & \vdots & \vdots & $\ddots$
+        \end{longtable}
+        \vspace{\stretch{1}}
+        \part A biologist is testing a new growth enzyme for fruit bearing plants. The
+        biologist has carefully designed a controlled experiment of the effect of the
+        soil concentration of the enzyme, ensuring all other conditions are held constant
+        across all the plants, and each plant was isolated. At the end of the study the
+        total mass of fruit produced was measured.
+        \begin{longtable}{llll}
+            Plant & Soil Concentration & Fruit Mass & $\cdots$\\
+            \hline
+            1 & 0.5 & 4 & $\cdots$\\
+            2 & 1 & 10 & $\cdots$\\
+            3 & 2 & 12 & $\cdots$\\
+            \vdots & \vdots & \vdots & $\ddots$
+            \endhead
+        \end{longtable}
+        \vspace{\stretch{1}}
+    \end{parts}
+
+    \newpage
+    \question The analysts at a shipping company estimate mileage costs in dollars (\$) with
+    a simple linear equation $f(X) = Y + r \cdot X$, where $X$ is the mileage measured in
+    total kilometers traveled by the shipping vehicles, and $Y$ is the constant cost of
+    operation.
+
+    Using reports from their tracking database the constant cost $Y$ was stated as
+    \$7639.37. However, the constant cost reimbursement system only pays out in multiples of
+    \$100 dollars. The total mileage $X$ was reported as 479456 km, but the odometer
+    tracking only has a resolution of 10 km.
+    \begin{parts}
+        \part Using rounding at half away from zero please round each measurement to the
+        reliable digits, and using the standard notation from class provide the absolute
+        uncertainty of the constant cost and the total mileage.
+        \vspace{\stretch{1}}
+        \part Assuming the company has set the value of the rate constant $r$ as 125, what
+        are the units of measurement of $r$, and what is the absolute uncertainty in the
+        total mileage cost $f(X)$.
+        \vspace{\stretch{1}}
+    \end{parts}
+
+    \newpage
+    \question A service company is planning to implement random drug screening of their site
+    workers. Currently only 3 in 100 Albertans use illicit stimulants. Please use the outlined
+    drug screening Confusion Matrix in your answer.
+    \begin{longtable}{lp{3cm}p{3cm}}
+        & \multicolumn{2}{c}{Actual Substance Use} \\
+        Test Result & Absent & Present\\
+        \hline
+        \endhead\\
+        Positive & $3/20$ \par False Positive & $19/20$ \par True Positive\\\\
+        Negative & $17/20$ \par True Negative & $1/20$ \par False Negative
+    \end{longtable}
+    \begin{parts}
+        \part If a worker tests positive what is the incorrect conclusion reached by the
+        Prosecutor's Fallacy, please specify either of the incorrect probabilities from the
+        confusion matrix.
+        \vspace{\stretch{1}}
+        \part What is the correct conclusion and probability of having used illicit
+        stimulants, please show your work.
+        \vspace{\stretch{1}}
+    \end{parts}
+\end{questions}
+\end{document}

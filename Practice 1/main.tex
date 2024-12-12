@@ -1,0 +1,102 @@
+\documentclass{exam}
+\usepackage{longtable}
+
+% Bibliographic elements
+\title{DATA3304 Practice 1}
+\date{\today}
+\author{Bow Valley College\\Data Management and Analytics}
+
+% Header
+\pagestyle{headandfoot}
+\firstpageheader{DATA3304}{Practice 1}{February 9, 2024}
+\firstpageheadrule
+\runningheader{DATA3304}{Practice 1}{February 9, 2024}
+\runningheadrule
+
+\begin{document}
+Name:\enspace\hrulefill
+\begin{questions}
+
+    \question For each of the two scenarios identify whether the rows of the example data
+    are a statistically independent sample, or if the rows are dependent on each other.
+    Please provide a one or two sentence explanation.
+    \begin{parts}
+        \part A web-store has collected sales data of unrelated clients, who are
+        geographically dispersed. Each record contains the total sales made to a single
+        client in the previous fiscal year. Empty registration dates indicate the client
+        created an account before the start of the previous fiscal year.
+        \begin{longtable}{lllllll}
+            Client & Sales & Sessions & Shipments & City & Registration & $\cdots$\\
+            \hline
+            \endhead
+            A & \$500 & 25 & 2 & X & June 5 & $\cdots$\\
+            B & \$2000 & 50 & 5 & Y &  & $\cdots$\\
+            C & \$250 & 12 & 1 & Z & October 23 & $\cdots$\\
+            D & \$1200 & 61 & 4 & W &  & $\cdots$\\
+            \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & $\ddots$
+        \end{longtable}
+        \vspace{\stretch{1}}
+        \part A social-media application has collected the time evolution of the
+        self-reported relationships between pairs of users. Each relationship is represented
+        by a pair of records, each containing a pair of users, the type of relationship, and
+        the time-span of the relationship.
+        \begin{longtable}{llllll}
+            Request User & Relation & Respond User & Start & End & $\cdots$\\
+            \hline
+            A & Daughter & B & & & $\cdots$\\
+            B & Mother & A  & & & $\cdots$\\
+            A & Friend & C & March 5 & & $\cdots$\\
+            C & Friend & A & March 5 & & $\cdots$\\
+            D & Employee & B & May 23 & December 15 & $\cdots$\\
+            B & Employer & D & May 23 & December 15 & $\cdots$\\
+            \vdots & \vdots & \vdots & \vdots & \vdots & $\ddots$
+            \endhead
+        \end{longtable}
+        \vspace{\stretch{1}}
+    \end{parts}
+
+    \newpage
+    \question A taxi company has collected shift length and number of ride statistics over
+    a fixed time period. Unfortunately the data report has overstated the precision of
+    measurement in an effort to improve data quality, using partial fractional attribution
+    for records overlapping with the boundaries of the time period.
+
+    The report stated that there were 2766.45 minutes of driver-shift recorded, but the
+    source data system only records shift lengths in increments of 10 minutes.
+    
+    Furthermore, the report stated there were 212.85 rides. We know that it is only possible
+    to measure ride counts in increments of 1.
+    \begin{parts}
+        \part Using rounding at half away from zero please round each measurement to the
+        reliable digits, and provide the marginal uncertainty.
+        \vspace{\stretch{1}}
+        \part Assuming rides are requested randomly and independently from the drivers, find
+        the marginal uncertainty of the ratio of rides over driver-shift length, and provide
+        the units of measurement of the ratio through dimensional analysis. Please show your
+        work.
+        \vspace{\stretch{1}}
+    \end{parts}
+
+    \newpage
+    \question It has been purposed to implement random COVID screening of students using a
+    rapid test. Currently 1 in 1000 Albertans have COVID. Please use the outlined Rapid Test
+    Confusion Matrix in your answer.
+    \begin{longtable}{lp{3cm}p{3cm}}
+        & \multicolumn{2}{c}{Actual COVID Infection} \\
+        Test Result & Absent & Present\\
+        \hline
+        \endhead\\
+        Positive & $1/100$ \par False Positive & $2/3$ \par True Positive\\\\
+        Negative & $99/100$ \par True Negative & $1/3$ \par False Negative
+    \end{longtable}
+    \begin{parts}
+        \part If a student tests positive what is the incorrect conclusion reached by the
+        Prosecutor's Fallacy, please specify either of the incorrect probabilities from the
+        confusion matrix.
+        \vspace{\stretch{1}}
+        \part What is the correct conclusion and probability of being infected, please show
+        your work.
+        \vspace{\stretch{1}}
+    \end{parts}
+\end{questions}
+\end{document}
